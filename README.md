@@ -23,10 +23,12 @@ Tener instalado en el sistema:
 
   python manage.py migrate
 
+---
+
 # **Ejecución de la Aplicación**
 
    Ejecutar el comando:
 
    python manage.py runserver o py manage.py runserver
 
-   __Una vez iniciado, se ingresa a la web por la dirección dada_.
+   _Una vez iniciado, se ingresa a la web por la dirección dada_.
