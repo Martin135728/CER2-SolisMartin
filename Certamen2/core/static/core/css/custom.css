@@ -1,0 +1,104 @@
+/* ==========================================================
+   Paleta
+   #CCD5AE  verde salvia
+   #E9EDC9  verde claro
+   #FEFAE0  crema (fondo general)
+   #FAEDCD  beige
+   #D4A373  caramelo (acento)
+   ========================================================== */
+
+:root {
+    --pv-salvia: #CCD5AE;
+    --pv-verde-claro: #E9EDC9;
+    --pv-crema: #FEFAE0;
+    --pv-beige: #FAEDCD;
+    --pv-caramelo: #D4A373;
+    --pv-caramelo-oscuro: #B98550;
+    --pv-azul: #22577A;
+
+    /* Variables de Bootstrap 5.3: cambian el color base sin usar !important */
+    --bs-body-bg: #FEFAE0;
+    --bs-body-color: #000000;
+    --bs-secondary-color: #333333;
+    --bs-link-color: #22577A;
+    --bs-link-hover-color: #14384f;
+}
+
+/* Fondo y texto general */
+body {
+    background-color: var(--pv-crema);
+    color: #000000;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: var(--pv-caramelo) !important;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #333333 !important;
+    text-decoration: underline;
+}
+
+/* Sección principal (hero) */
+.hero-section {
+    background-color: var(--pv-beige);
+    border-bottom: 3px solid var(--pv-caramelo);
+}
+
+
+.titulo-custom {
+    color: var(--pv-azul);
+}
+
+/* Tarjetas */
+.card-custom-1 {
+    background-color: var(--pv-salvia);
+    color: #000000;
+    border: 1px solid var(--pv-caramelo) !important;
+}
+
+.card-custom-2 {
+    background-color: var(--pv-verde-claro);
+    color: #000000;
+    border: 1px solid var(--pv-salvia) !important;
+}
+
+/* Botones */
+.btn-custom {
+    background-color: var(--pv-caramelo);
+    color: #000000;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: var(--pv-salvia);
+    color: #000000;
+}
+
+/* Formularios (login y crear lugar) */
+.form-control,
+.form-select {
+    background-color: #FFFFFF;
+    border: 1px solid var(--pv-caramelo);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--pv-caramelo-oscuro);
+    box-shadow: 0 0 0 0.2rem rgba(212, 163, 115, 0.35);
+}
+
+/* Footer */
+footer {
+    background-color: var(--pv-verde-claro);
+    border-top: 2px solid var(--pv-salvia);
+}

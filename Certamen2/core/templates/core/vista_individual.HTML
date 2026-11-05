@@ -1,0 +1,36 @@
+{% extends 'core/base.HTML' %}
+{% load static %}
+
+{% block title %}{{ lugar.nombre }} - Fundación Patrimonio Vivo{% endblock %}
+
+{% block content %}
+    <main class="container my-5 flex-grow-1">
+        <a href="{% url 'catalogo' %}" class="btn btn-outline-dark btn-sm mb-4">&larr; Volver al Catálogo</a>
+
+        <div class="row card-custom shadow-sm border rounded p-4 align-items-center bg-white">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                {% if lugar.imagen %}
+                    <img src="{{ lugar.imagen }}" class="img-fluid rounded shadow-sm w-100" alt="{{ lugar.nombre }}" style="max-height: 400px; object-fit: cover;">
+                {% else %}
+                    <div class="p-5 bg-light text-center rounded text-muted">Sin imagen disponible</div>
+                {% endif %}
+            </div>
+
+            <div class="col-lg-6">
+                <span class="badge bg-secondary mb-2 px-3 py-2">{{ lugar.categoria.nombre }}</span>
+                <h1 class="fw-bold mb-3" style="color: #22577A;">{{ lugar.nombre }}</h1>
+                
+                <p class="text-muted mb-2"><strong>Ubicación:</strong> {{ lugar.ubicacion }}</p>
+                
+                {% if lugar.anio_construccion %}
+                    <p class="text-muted mb-3"><strong>Año de Construcción:</strong> {{ lugar.anio_construccion }}</p>
+                {% endif %}
+
+                <hr class="text-muted">
+
+                <h5 class="fw-bold mt-3" style="color: #38A3A5;">Descripción Histórica</h5>
+                <p class="text-secondary leading-relaxed">{{ lugar.descripcion }}</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

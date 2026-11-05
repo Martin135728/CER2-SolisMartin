@@ -1,0 +1,38 @@
+{% extends 'core/base.HTML' %}
+{% load static %}
+
+{% block title %}Iniciar Sesión - Fundación Patrimonio Vivo{% endblock %}
+
+{% block content %}
+    <main class="container my-auto py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card card-custom shadow-sm border p-4 rounded-3">
+                    <div class="card-body">
+                        <h2 class="text-center fw-bold mb-4" style="color: #22577A;">Iniciar Sesión</h2>
+                        {% if error_message %}
+                            <div class="alert alert-danger text-center small py-2" role="alert">
+                                {{ error_message }}
+                            </div>
+                        {% endif %}
+                        <form method="post">
+                            {% csrf_token %}
+                            
+                            <div class="mb-3">
+                                <label for="username" class="form-label fw-semibold text-secondary">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label fw-semibold text-secondary">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-custom-primary w-100 py-2">Iniciar Sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

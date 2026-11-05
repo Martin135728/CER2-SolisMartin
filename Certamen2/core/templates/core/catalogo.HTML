@@ -1,0 +1,38 @@
+{% extends 'core/base.HTML' %}
+{% load static %}
+
+{% block title %}Catálogo - Fundación Patrimonio Vivo{% endblock %}
+
+{% block content %}
+
+    <div class="mb-4">
+        <a href="{% url 'catalogo' %}" class="btn btn-outline-dark btn-sm">Todas</a>
+        {% for cat in categorias %}
+            <a href="{% url 'catalogo' %}?categoria={{ cat.id }}" class="btn btn-outline-secondary btn-sm">{{ cat.nombre }}</a>
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        {% for lugar in lugares %}
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm card-custom h-100 border">
+                    <img src="{{ lugar.imagen }}" class="card-img-top" alt="{{ lugar.nombre }}" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-secondary mb-2">{{ lugar.categoria.nombre }}</span>
+                        <h3 class="card-title fw-bold" style="color: #38A3A5;">{{ lugar.nombre }}</h3>
+                        <p class="card-text text-muted small">{{ lugar.ubicacion }}</p>
+                    </div>
+                    <div class="card-footer bg-white border-top-0 pb-3">
+                        <a href="{% url 'vista_individual' pk=lugar.id %}" class="btn btn-custom-primary btn-sm w-100">Ver más detalles</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info text-center" role="alert">
+                    No hay lugares patrimoniales registrados en esta categoría.
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
