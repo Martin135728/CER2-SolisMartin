@@ -12,7 +12,7 @@ Tener instalado en el sistema:
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone [https://github.com/Martin135728/CER2-SolisMartin.git](https://github.com/Martin135728/CER2-SolisMartin.git)
+   git clone https://github.com/Martin135728/CER2-SolisMartin.git
    cd CER2-SolisMartin/Certamen2
 
 2. **Instalar las Dependencias:**
